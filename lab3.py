@@ -1,10 +1,12 @@
 import time
+import datetime
 import board
 import busio
 import csv
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
+now = datetime.datetime.now()
 # For use with Raspberry Pi/Linux:
 import serial
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25) 
@@ -49,3 +51,7 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
+    print("Current time:")
+    print(str(now))
+    print("---------------------------------------")
+    
