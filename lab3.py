@@ -6,8 +6,8 @@ import csv
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
-#starttime = datetime.datetime.now()
-#end = starttime + 30
+starttime = datetime.datetime.now()
+end = starttime + 30
 
 # For use with Raspberry Pi/Linux:
 import serial
@@ -55,6 +55,9 @@ while True:
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
     print("Current time:")
+    print(now)
+    print("---------------------------------------")
+    print("Test:")
     print(now)
     print("---------------------------------------")
     
