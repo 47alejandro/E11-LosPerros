@@ -22,6 +22,10 @@ pm25 = PM25_UART(uart, None)
 # Connect to a PM2.5 sensor over I2C
 # pm25 = PM25_I2C(i2c, reset_pin)
 print("Found PM2.5 sensor, reading data...")
+f = open ["data.csv","w", newline = '']
+writer = csv.writer(f)
+metadata = ["PM1", "PM2.5", "PM10", "Time"]
+writer.writerow(metadata)
 
 while starttime < end:
     time.sleep(1)
@@ -30,6 +34,8 @@ while starttime < end:
         aqdata = pm25.read()
         # print(aqdata)
         now = datetime.datetime.now()
+        data = [aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], now]
+        writer.writerow(data)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
@@ -57,7 +63,5 @@ while starttime < end:
     print("Current time:")
     print(now)
     print("---------------------------------------")
-    print("Test:")
-    print(end)
-    print("---------------------------------------")
     starttime= time.time()
+f.close
