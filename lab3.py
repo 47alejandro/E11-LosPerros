@@ -6,7 +6,7 @@ import csv
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
-starttime = datetime.time.now()
+starttime = time.time()
 end = starttime + 30
 
 # For use with Raspberry Pi/Linux:
@@ -23,7 +23,7 @@ pm25 = PM25_UART(uart, None)
 # pm25 = PM25_I2C(i2c, reset_pin)
 print("Found PM2.5 sensor, reading data...")
 
-while True:
+while starttime < end:
     time.sleep(1)
 
     try:
@@ -60,4 +60,4 @@ while True:
     print("Test:")
     print(end)
     print("---------------------------------------")
-    
+    starttime= time.time()
