@@ -6,7 +6,7 @@ import csv
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
-starttime = datetime.datetime.now()
+starttime = datetime.time.now()
 end = starttime + 30
 
 # For use with Raspberry Pi/Linux:
@@ -58,6 +58,6 @@ while True:
     print(now)
     print("---------------------------------------")
     print("Test:")
-    print(now)
+    print(end)
     print("---------------------------------------")
     
