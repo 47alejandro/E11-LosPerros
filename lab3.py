@@ -6,7 +6,6 @@ import csv
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 
-now = datetime.datetime.now()
 # For use with Raspberry Pi/Linux:
 import serial
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25) 
@@ -27,6 +26,7 @@ while True:
     try:
         aqdata = pm25.read()
         # print(aqdata)
+        now = datetime.datetime.now()
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
