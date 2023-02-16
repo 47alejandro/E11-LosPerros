@@ -39,7 +39,7 @@ pm25 = PM25_UART(uart, None)
 print("Found PM2.5 sensor, reading data...")
 f = open("data.csv","w", newline='')
 writer = csv.writer(f)
-metadata = ["PM1", "PM2.5", "PM10","Tempature", "Gas", "Humidity", "Pressure", "Altitude", "Time in Seconds", "Time"]
+metadata = ["PM1", "PM2.5", "PM10","Tempature", "Gas", "Humidity", "Pressure", "Altitude", "TimeinSeconds", "Time"]
 writer.writerow(metadata)
 
 while itime < (start_time + run_time):
