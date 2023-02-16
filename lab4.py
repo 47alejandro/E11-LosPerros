@@ -43,11 +43,11 @@ while itime < (start_time + run_time):
     time.sleep(1)
 
     print("\nTemperature: %0.1f C" % bme680.temperature)
-	print("Gas: %d ohm" % bme680.gas)
-	print("Humidity: %0.1f %%" %bme680.relative_humidity)
-	print("Pressure: %0.3f hPa" % bme680.pressure)
-	print("Altitude = %0.2f meters" % bme680.altitude)
-	#starttime1 = time.time()
+    print("Gas: %d ohm" % bme680.gas)
+    print("Humidity: %0.1f %%" %bme680.relative_humidity)
+    print("Pressure: %0.3f hPa" % bme680.pressure)
+    print("Altitude = %0.2f meters" % bme680.altitude)
+    #starttime1 = time.time()
 
     try:
         aqdata = pm25.read()
@@ -81,7 +81,9 @@ while itime < (start_time + run_time):
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
     print("Current time:")
-    print(now)
+    print(now1)
     print("---------------------------------------")
+    print("Current time:")
+    print(now)
     starttime= time.time()
 f.close
