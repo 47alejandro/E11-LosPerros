@@ -17,7 +17,7 @@ run_time = int(sys.argv[1])
 itime = start_time
 
 n1 = datetime.now()
-save = n1.strftime("%Y-%m-%d %H:%M:%S")
+save = n1.strftime("%Y-%m-%d_%H-%M-%S")
 
 i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
