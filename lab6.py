@@ -16,7 +16,7 @@ start_time = time.time()
 run_time = int(sys.argv[1])
 itime = start_time
 
-n1 = datetime.now()
+n1 = datetime.datetime.now()
 save = n1.strftime("%Y-%m-%d_%H-%M-%S")
 
 i2c = board.I2C()
