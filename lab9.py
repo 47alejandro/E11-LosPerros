@@ -21,6 +21,7 @@ count = 0
 # functiondefinition 
 def count_p(channel):
     if GPIO.input(channel) == GPIO.HIGH:
+        global count
         count += 1
         print(time.time())
 
