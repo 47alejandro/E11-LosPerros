@@ -20,9 +20,9 @@ count = 0
 
 # functiondefinition 
 def count_p(channel):
-    global count
-    count += 1
-    print(time.time())
+    if GPIO.input(channel) == GPIO.HIGH:
+        count += 1
+        print(time.time())
 
 
 GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
