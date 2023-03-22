@@ -27,7 +27,7 @@ def count_p(channel):
 
 
 meta_data = ["Time","Count"]
-f = open("RadiationCount"+ time.time + ".csv","w",newline = '')
+f = open("RadiationCount"+ time.time() + ".csv","w",newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
