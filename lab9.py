@@ -18,13 +18,13 @@ GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 count = 0
 
 # functiondefinition 
-def count_pulse(channel):
+def count_p(channel):
     global count
     count += 1
     print(time.time())
 
 
-GPIO.add_event_detect(26, GPIO.FALLING, callback=count_pulse)
+GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
 
 meta_data = ["Time","Count"]
 f = open("RadiationCount.csv","w",newline = '')
