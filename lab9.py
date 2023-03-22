@@ -27,7 +27,7 @@ def count_p(channel):
 
 
 meta_data = ["Time","Count"]
-f = open("RadiationCount.csv","w",newline = '')
+f = open("RadiationCount"+ time.time + ".csv","w",newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
@@ -37,7 +37,7 @@ while counttime < currenttime+runtime:
     counttime = int(time.time())
     try:
         count = 0
-        time.sleep(60)
+        time.sleep(10)
         print("CountsForCurrentMinute:", count)
     except KeyboardInterrupt: 
         GPIO.cleanup()
