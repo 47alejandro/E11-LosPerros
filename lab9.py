@@ -15,7 +15,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-save = n1.strftime("%Y-%m-%d_%H-%M-%S")
+n1 = datetime.datetime.now()s
+ave = n1.strftime("%Y-%m-%d_%H-%M-%S")
 
 #variable
 count = 0
