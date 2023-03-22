@@ -12,6 +12,7 @@ counttime = int(time.time())
 
 #GPIO pin set up
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(6, GPIO.IN)
 GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 #variable
