@@ -31,10 +31,11 @@ f = open("RadiationCount.csv","w",newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
+GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
+
 while counttime < currenttime+runtime:
     counttime = int(time.time())
     try:
-        GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
   #     count = 0
         time.sleep(60)
         print("CountsForCurrentMinute:", count)
