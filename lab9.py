@@ -15,6 +15,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+save = time.time() 
+
 #variable
 count = 0
 
@@ -27,7 +29,7 @@ def count_p(channel):
 
 
 meta_data = ["Time","Count"]
-f = open("RadiationCount"+ time.time() + ".csv","w",newline = '')
+f = open("RadiationCount"+ save + ".csv","w",newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
