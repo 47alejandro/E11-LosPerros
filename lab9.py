@@ -25,8 +25,6 @@ def count_p(channel):
         print(time.time())
 
 
-GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
-
 meta_data = ["Time","Count"]
 f = open("RadiationCount.csv","w",newline = '')
 writer = csv.writer(f)
@@ -35,6 +33,7 @@ writer.writerow(meta_data)
 while counttime < currenttime+runtime:
     counttime = int(time.time())
     try:
+        GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
         count = 0
         time.sleep(60)
         print("CountsForCurrentMinute:", count)
