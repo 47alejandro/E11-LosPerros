@@ -15,7 +15,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-save = time.time() 
+save = n1.strftime("%Y-%m-%d_%H-%M-%S")
 
 #variable
 count = 0
