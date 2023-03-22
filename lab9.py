@@ -35,7 +35,7 @@ while counttime < currenttime+runtime:
     try:
         GPIO.add_event_detect(26, GPIO.FALLING, callback=count_p)
         count = 0
-        time.sleep(60)
+        time.sleep(15)
         print("CountsForCurrentMinute:", count)
     except KeyboardInterrupt: 
         GPIO.cleanup()
