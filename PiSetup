@@ -1,0 +1,20 @@
+Getting your Raspberry Pi ready for displaying data
+Enter these commands at the command line on your raspberry pi (the $ denotes the command line, it is not part of the command)
+$ sudo apt-get install -y rabbitmq-server
+$ sudo -H pip install pika
+$ sudo -H pip install matplotlib
+$ sudo -H pip install folium
+$ sudo -H pip install adafruit-circuitpython-gps
+$ git clone https://github.com/engineering-11/dosenet-raspberrypi-1.git
+$ cd dosenet-raspberrypi-1
+$ git checkout -b pocket_gui origin/pocket_gui
+$ cp gpsGUI.desktop ~/Desktop/
+$ sudo passwd -d root
+$ sudo passwd -l root
+$ sudo nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+	Change the ssid to “MobileDoseNet<#>” (where <#> should be replaced with the number I give your group)
+	Change the psk to psk=”mobiledosenet”
+To exit
+Ctrl-X
+Y
+Enter
